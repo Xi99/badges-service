@@ -1,3 +1,4 @@
+// From Rabbitmq site
 const amqp = require('amqplib');
 
 amqp.connect('amqp://localhost', function(error0, connection) {

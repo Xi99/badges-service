@@ -1,3 +1,4 @@
+// Basic Consumer File
 const amqp = require("amqplib");
 
 connect();
@@ -13,6 +14,8 @@ async function connect() {
             const input = JSON.parse(message.content.toString());
             console.log(`Recieved vendor with input: ${input.companyName}`)
 
+            // Run Logic Here
+            channel.ack(message); // removes message from the queue
         })
 
         console.log("Waiting for messages...")
