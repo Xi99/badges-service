@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js",
-    "Consume": "node src/rabbitmq/consumer.js"
+    "publisher": "node src/rabbitmq/publisher.js",
+    "consume": "nodemon src/rabbitmq/consumer.js",
+    "vendors": "nodemon src/rabbitmq/receive_vendors.js",
+    "attendees": "nodemon src/rabbitmq/receive_attendees",
+    "sponsors": "nodemon src/rabbitmq/receive_sponsors",
+    "presentations": "nodemon src/rabbitmq/receive_presentations"
   },
   "repository": {
     "type": "git",
