@@ -1,7 +1,7 @@
 const express = require('express');
 const pgdb = require("./db/db");
 const bp = require('body-parser');
-const amqp = require('amqplib/callback_api');
+// const amqp = require('amqplib/callback_api');
 
 const server = express();
 const port = 3000;
