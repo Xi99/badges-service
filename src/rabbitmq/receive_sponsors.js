@@ -17,7 +17,7 @@ async function connect() {
             channel.ack(message); // removes message from the queue
         })
 
-        console.log("Waiting for messages...")
+        console.log("Waiting for Sponsor messages...")
     
     }
     catch (ex){
