@@ -5,16 +5,16 @@ const pool = new Pool({
   port: 5432,
 });
 
-const [name] = async () => {
+const getAllBadges = async () => {
   try{
-  const res = await pool.query("SELECT * FROM [name]");
+  const res = await pool.query("SELECT * FROM badges");
   return res.rows;
   } catch (error) {
-    console.log('That did not go well.')
+    console.log('That did not go well...')
     throw error
   }
 };
 
 module.exports = {
-  
+  getAllBadges
 };
