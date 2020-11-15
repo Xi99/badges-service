@@ -1,1 +1,0 @@
-// Code to subscribe to messages in the queue?
