@@ -1,4 +1,5 @@
 const amqp = require("amqplib");
+const { addBadge } = require("../db/db.js");
 
 connect();
 async function connect() {
@@ -14,6 +15,13 @@ async function connect() {
             console.log(`Recieved Vendor Company Name: ${input.companyName}`)
 
             // Run Logic Here
+            const vendor = {
+                label: "Vendor",
+                companyName: input.companyName
+            }
+
+            addBadge(vendor)
+
             channel.ack(message); // removes message from the queue
         })
 
