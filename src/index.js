@@ -4,15 +4,21 @@ const bp = require('body-parser');
 // const amqp = require('amqplib/callback_api');
 
 const server = express();
-const port = 3000;
+const port = 8080;
 
 // Middleware
 server.use(bp.json());
 
 // GET Routes
 
-server.get('/', (__, res) => {
+server.get('/badges', (__, res) => {
     pgdb.getAllBadges().then((results) => res.send(results))
+});
+
+// POST Routes
+
+server.post("/badge", (req, res) => {
+  pgdb.addBadge(req.body).then(res.sendStatus(201));
 });
 
 
