@@ -1,16 +1,16 @@
 // Basic Consumer File
 const amqp = require("amqplib");
 
-connect();
-async function connect() {
+
+async function connect(queue) {
 
     try {
         const amqpServer = "amqp://localhost"
         const connection = await amqp.connect(amqpServer)
         const channel = await connection.createChannel();
-        await channel.assertQueue("gimme.created");
+        await channel.assertQueue(queue);
         
-        channel.consume("gimme.created", message => {
+        channel.consume(queue, message => {
             const input = JSON.parse(message.content.toString());
             console.log(`Recieved vendor with input: ${input.companyName}`)
 
@@ -26,3 +26,6 @@ async function connect() {
     }
 
 }
+
+connect("gimme.created")
+// connect("gimme.created")
