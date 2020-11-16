@@ -6,6 +6,19 @@ This is a microservice based application that allows tech conference organizers 
 
 npm install
 
+# Routes
+
+GET /badges 
+
+Returns all the badges created in a json object that looks like this:
+
+{
+        "id": 1,
+        "name": "Mark Nichols",
+        "label": "Speaker",
+        "company": "MN Inc."
+    }
+
 ## Requirements
 
 The Badges Bounded Context is responsible for generating badges for people that will show up at the conference. Each badge must have a unique identifier that can be represented as a Micro QR code.
