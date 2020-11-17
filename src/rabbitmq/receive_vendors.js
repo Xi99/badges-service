@@ -18,7 +18,7 @@ async function connect() {
             const vendor = { //TODO: Figure out what is going to DB
                 name: '',
                 label: "Vendor",
-                companyName: input.companyName,
+                company: input.companyName,
             }
 
             addBadge(vendor)
