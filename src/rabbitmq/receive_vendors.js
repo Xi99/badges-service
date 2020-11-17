@@ -15,9 +15,10 @@ async function connect() {
             console.log(`Recieved Vendor Company Name: ${input.companyName}`)
 
             // Run Logic Here
-            const vendor = {
+            const vendor = { //TODO: Figure out what is going to DB
+                name: '',
                 label: "Vendor",
-                companyName: input.companyName
+                companyName: input.companyName,
             }
 
             addBadge(vendor)
