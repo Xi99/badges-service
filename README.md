@@ -6,6 +6,24 @@ This is a microservice based application that allows tech conference organizers 
 
 npm install
 
+# Scripts To Run For Consumers
+
+## Presentations
+
+yarn presentations
+
+## Vendors
+
+yarn vendors
+
+## Attendees
+
+yarn attendees
+
+## Sponsors
+
+yarn sponsors
+
 ## Requirements
 
 The Badges Bounded Context is responsible for generating badges for people that will show up at the conference. Each badge must have a unique identifier that can be represented as a Micro QR code.
