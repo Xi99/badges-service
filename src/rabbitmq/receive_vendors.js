@@ -12,7 +12,7 @@ async function connect() {
         
         channel.consume("vendor.created", message => {
             const input = JSON.parse(message.content.toString());
-            console.log(`Recieved Vendor Company Name: ${input.companyName}`)
+            // console.log(`Recieved Vendor Company Name: ${input.companyName}`)
 
             // Run Logic Here
             const vendor = { //TODO: Figure out what is going to DB

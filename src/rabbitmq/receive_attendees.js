@@ -13,7 +13,7 @@ async function connect() {
         
         channel.consume("attendee.verified", message => {
             const input = JSON.parse(message.content.toString());
-            console.log(`Recieved Attendee: ${input.name}`) 
+            // console.log(`Recieved Attendee: ${input.name}`) 
 
             // Run Logic Here
             const attendee = { //TODO: Figure out what is going to DB

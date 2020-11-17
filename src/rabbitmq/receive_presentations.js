@@ -12,7 +12,7 @@ async function connect() {
         
         channel.consume("presentation.approved", message => {
             const input = JSON.parse(message.content.toString());
-            console.log(`Recieved Presentations: ${input.name}`) 
+            // console.log(`Recieved Presentations: ${input.name}`) 
 
             // Run Logic Here
             const presentation = { 
