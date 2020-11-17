@@ -1,4 +1,5 @@
 const amqp = require("amqplib");
+const { addBadge } = require("../db/db.js");
 
 connect();
 async function connect() {
@@ -11,9 +12,16 @@ async function connect() {
         
         channel.consume("sponsor.member.created", message => {
             const input = JSON.parse(message.content.toString());
-            console.log(`Recieved Sponsors: ${input}`) //TODO: Figure out label, sponsorship level
-
+            // console.log(`Recieved Sponsors: ${input.name}`) 
             // Run Logic Here
+            const sponsor = { 
+                name: input.name,
+                label: "Sponsor - ", sponsorLevel,
+                company: input.organization,
+            }
+            addBadge(sponsor)
+
+
             channel.ack(message); // removes message from the queue
         })
 
