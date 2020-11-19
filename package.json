@@ -11,7 +11,8 @@
     "vendors": "nodemon src/rabbitmq/receive_vendors.js",
     "attendees": "nodemon src/rabbitmq/receive_attendees",
     "sponsors": "nodemon src/rabbitmq/receive_sponsors",
-    "presentations": "nodemon src/rabbitmq/receive_presentations"
+    "presentations": "nodemon src/rabbitmq/receive_presentations",
+    "docker": "docker run -d --hostname mq --name mq -p 5672:5672 rabbitmq:3"
   },
   "repository": {
     "type": "git",
